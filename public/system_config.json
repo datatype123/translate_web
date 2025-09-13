@@ -1,0 +1,13 @@
+{
+    "api": {
+        "baseUrl": "https://translate-backend-seven.vercel.app",
+        "translate": "https://translate-backend-seven.vercel.app/api/v1/translate",
+        "detect": "https://translate-backend-seven.vercel.app/api/v1/detect",
+        "register": "https://translate-backend-seven.vercel.app/register",
+        "login": "https://translate-backend-seven.vercel.app/login",
+        "update-password": "https://translate-backend-seven.vercel.app/update-password",
+        "reset-password": "https://translate-backend-seven.vercel.app/reset-password",
+        "speech":"https://api.sws.speechify.com/v1/audio/speech",
+        "apiKey":"r1W7Gu1lTZgF8KdRD8zrm2q_O9ZBeonHtnx6bcslmdA="
+    }
+}
