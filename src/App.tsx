@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Provider } from 'react-redux';
 import { store } from './store/configStore';
 import Header from './components/Header';
@@ -6,6 +6,7 @@ import TranslationInterface from './components/TranslationInterface';
 import VoiceChat from './components/VoiceChat';
 import AccountDashboard from './components/AccountDashboard';
 import LanguageSelector from './components/LanguageSelector';
+import VoiceList from './components/VoiceList';
 
 function AppContent() {
   const [currentView, setCurrentView] = useState<'translate' | 'voice' | 'account'>('translate');
@@ -76,7 +77,9 @@ function AppContent() {
           )}
 
           {currentView === 'voice' && (
-            <div className="max-w-4xl mx-auto">
+            
+            <div >
+              <VoiceList/>
               <VoiceChat
                 sourceLanguage={sourceLanguage}
                 targetLanguage={targetLanguage}

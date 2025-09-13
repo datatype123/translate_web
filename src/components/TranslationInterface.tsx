@@ -5,7 +5,7 @@ import type { TranslateRequest } from '../services/types.d';
 import { useAppSelector } from '../store/hooks';
 import { textActions } from '../store/text';
 import type { RootState } from '../store/types';
-import { translateService } from '../services/translate.services';
+// import { translateService } from '../services/translate.services';
 
 interface Language {
   code: string;
@@ -30,7 +30,7 @@ const TranslationInterface: React.FC<TranslationInterfaceProps> = ({
   const [sourceText, setSourceText] = useState('');
   const translatedText = useAppSelector((state: RootState) => state.text.translatedText);
   const isTranslating = useAppSelector((state: RootState) => state.text.isTranslating);
-  const voiceId = useAppSelector((state: RootState) => state.text.voice_id);
+  // const voiceId = useAppSelector((state: RootState) => state.text.voice_id);
   const isSpeechingOrigin = useAppSelector((state: RootState) => state.text.isSpeeching['origin']);
   const isSpeechingTranslated = useAppSelector((state: RootState) => state.text.isSpeeching['translated']);
   const [isRecording, setIsRecording] = useState(false);

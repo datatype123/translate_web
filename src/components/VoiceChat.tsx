@@ -42,6 +42,8 @@ const VoiceChat: React.FC<VoiceChatProps> = ({
   ]);
   const [isRecording, setIsRecording] = useState(false);
   const [currentInput, setCurrentInput] = useState('');
+  const [selectedVoice] = useState('henry'); // 👈 Thêm state cho voice
+
 
   const getLanguageName = (code: string) => {
     return languages.find(l => l.code === code)?.name || code;
@@ -95,10 +97,10 @@ const VoiceChat: React.FC<VoiceChatProps> = ({
     }, 1000);
   };
 
-  const handleSpeak = (text: string, lang: string, audio_format: string,type:string) => {
+  const handleSpeak = (text: string, lang: string, audio_format: string, type: string) => {
     try {
-      dispatch(textActions.speechText({ input: text, voice_id: lang, audio_format: audio_format, type:type }));
-    }catch(error){
+      dispatch(textActions.speechText({ input: text, voice_id: lang, audio_format: audio_format, type: type }));
+    } catch (error) {
       console.error('Error in speech synthesis:', error);
     }
   };
@@ -148,7 +150,7 @@ const VoiceChat: React.FC<VoiceChatProps> = ({
                     {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                   </span>
                   <button
-                    onClick={() => handleSpeak(message.text, 'henry', 'mp3', message.isUser ? 'origin' : 'translated')}
+                    onClick={() => handleSpeak(message.text, selectedVoice, 'mp3', message.isUser ? 'origin' : 'translated')}
                     className={`p-1 rounded ${
                       message.isUser 
                         ? 'hover:bg-blue-500 text-blue-100' 
@@ -164,8 +166,9 @@ const VoiceChat: React.FC<VoiceChatProps> = ({
         ))}
       </div>
 
-      {/* Input */}
-      <div className="border-t border-gray-200 p-4">
+      {/* Input + Voice Selector */}
+      <div className="border-t border-gray-200 p-4 space-y-3">
+        {/* Input Row */}
         <div className="flex items-center space-x-3">
           <button
             onClick={handleVoiceInput}
