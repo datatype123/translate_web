@@ -2,7 +2,7 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type {LoginRequest} from '../../services/types.d';
 import type { RootEpic } from '../types';
 import { filter, switchMap, map, catchError } from "rxjs/operators";
-import { concat, of } from "rxjs";
+import { of } from "rxjs";
 import { authenticationService } from '../../services/authentication.services';
 
 interface UserState {

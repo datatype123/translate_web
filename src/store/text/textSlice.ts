@@ -60,7 +60,7 @@ const textSlice = createSlice({
     setError(state, action: PayloadAction<string | null>) {
       state.error = action.payload;
     },
-    speechText(state, action: PayloadAction<SpeechRequest>) {
+    speechText(_state, _action: PayloadAction<SpeechRequest>) {
       // state.isTranslating = true;
     },
     translateText(state, action: PayloadAction<TranslateRequest>) {

@@ -24,11 +24,6 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
   languages,
   onSwap
 }) => {
-  // const sourceLanguage = useSelector()
-  const getLanguageDisplay = (code: string) => {
-    const lang = languages.find(l => l.code === code);
-    return lang ? `${lang.flag} ${lang.name}` : code;
-  };
 
   return (
     <div className="flex items-center justify-center mb-8">

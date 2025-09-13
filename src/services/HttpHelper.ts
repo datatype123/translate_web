@@ -1,13 +1,13 @@
-import queryString from 'query-string';
+// import queryString from 'query-string';
 import type { AjaxRequest } from 'rxjs/ajax';
-import type { RequestOptions, StringKeyValue } from './types';
+import type { RequestOptions} from './types';
 
 
-const asQueryString = (parameters?: StringKeyValue): string => {
-  if (!parameters || Object.keys(parameters).length === 0) return '';
+// const asQueryString = (parameters?: StringKeyValue): string => {
+//   if (!parameters || Object.keys(parameters).length === 0) return '';
 
-  return `?${queryString.stringify(parameters)}`;
-};
+//   return `?${queryString.stringify(parameters)}`;
+// };
 
 export const buildRequestUrl = (baseUrl: string, searchParams?: Record<string, any>): string => {
   if (!searchParams) return baseUrl;

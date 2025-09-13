@@ -1,6 +1,6 @@
-import { Observable, BehaviorSubject, throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { ajax, AjaxError, AjaxResponse } from 'rxjs/ajax';
-import { catchError, finalize, map, switchMap, take } from 'rxjs/operators';
+import { catchError, map} from 'rxjs/operators';
 import { buildRequestUrl, extractHeaders, removeCustomKeys } from './HttpHelper';
 import type { RequesterConfig, RequestOptions } from './types';
 // import { AppStore } from 'store';

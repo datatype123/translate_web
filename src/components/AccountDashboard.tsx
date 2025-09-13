@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from 'react';
 import { User, Settings, History, Star, CreditCard, Globe, Shield, Bell } from 'lucide-react';
-import { getSystemConfig } from '../services/config.middleware';
 
 const AccountDashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'profile' | 'history' | 'favorites' | 'settings'>('profile');
